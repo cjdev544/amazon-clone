@@ -6,7 +6,7 @@ export async function ProductFeed() {
   const products = await getProducts()
 
   return (
-    <div className='grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto'>
+    <section className='grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-52 mx-auto'>
       <ProductSlice products={products} start={0} end={4} />
       <img
         className='md:col-span-full'
@@ -18,7 +18,7 @@ export async function ProductFeed() {
         <ProductSlice products={products} start={4} end={5} />
       </div>
       <ProductSlice products={products} start={5} end={products.length} />
-    </div>
+    </section>
   )
 }
 // git remote add origin https://github.com/cjdev544/amazon-clone.git

@@ -21,6 +21,10 @@ export interface Product {
   isPrime: boolean
 }
 
+export interface CheckoutProduct extends Product {
+  checkProductId: string
+}
+
 export enum Category {
   Electronics = 'electronics',
   Jewelery = 'jewelery',

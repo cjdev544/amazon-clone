@@ -1,11 +1,11 @@
-import { type Product } from '@/types.d'
+import { type CheckoutProduct, type Product } from '@/types.d'
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 
 interface State {
-  productsInCart: Product[]
+  productsInCart: CheckoutProduct[]
   addProductToCart: (product: Product) => void
-  removeProductFromCart: (productId: number) => void
+  removeProductFromCart: (checkProductId: string) => void
 }
 
 export const useCartStore = create<State>()(
@@ -15,19 +15,20 @@ export const useCartStore = create<State>()(
         productsInCart: [],
 
         addProductToCart: (product: Product) => {
-          console.log({ product })
+          const checkProductId = crypto.randomUUID()
+          const parceProduct = { ...product, checkProductId }
           set(
             ({ productsInCart }) => ({
-              productsInCart: [...productsInCart, product],
+              productsInCart: [parceProduct, ...productsInCart],
             }),
             false,
             'ADD_TO_CART'
           )
         },
 
-        removeProductFromCart: (productId: number) => {
+        removeProductFromCart: (checkProductId: string) => {
           const productsInCart = get().productsInCart.filter(
-            (product) => product.id !== productId
+            (product) => product.checkProductId !== checkProductId
           )
           set({ productsInCart }, false, 'REMOVE_FROM_CART')
         },

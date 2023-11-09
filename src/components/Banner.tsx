@@ -5,7 +5,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 export default function Banner() {
   return (
-    <div className='relative'>
+    <section className='relative'>
       <div className='absolute w-full h-32 bg-gradient-to-t from-gray-100 to-transparent bottom-0 z-20' />
       <Carousel
         autoPlay
@@ -28,6 +28,6 @@ export default function Banner() {
           <img src='/img4.jpg' alt='img4' />
         </div>
       </Carousel>
-    </div>
+    </section>
   )
 }

@@ -11,7 +11,7 @@ interface Props {
 
 export function Product({ product }: Props) {
   return (
-    <div className='relative flex flex-col m-5 bg-white p-10 z-30'>
+    <article className='relative flex flex-col m-5 bg-white p-10 z-30'>
       <p className='absolute top-2 right-2 text-gray-400 text-xs italic'>
         {product.category}
       </p>
@@ -22,7 +22,7 @@ export function Product({ product }: Props) {
         height={200}
         style={{
           objectFit: 'contain',
-          width: 200,
+          width: 'auto',
           height: 200,
           alignSelf: 'center',
         }}
@@ -39,11 +39,16 @@ export function Product({ product }: Props) {
       <div className='mb-5'>{`$ ${product.price}`}</div>
       {product.isPrime && (
         <div className='flex items-center space-x-2 -mt-5'>
-          <img className='w-12' src='/prime.png' alt='logo de prime' />
+          <img
+            loading='lazy'
+            className='w-12'
+            src='/prime.png'
+            alt='logo de prime'
+          />
           <p className='text-xs text-gray-500'>envío GRATIS</p>
         </div>
       )}
       <ProductButton product={product} />
-    </div>
+    </article>
   )
 }
