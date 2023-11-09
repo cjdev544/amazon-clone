@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@heroicons/react": "2.0.18",
+    "firebase": "10.5.2",
     "next": "14.0.1",
+    "next-auth": "4.24.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-responsive-carousel": "3.2.23"
+    "react-responsive-carousel": "3.2.23",
+    "zustand": "4.4.6"
   },
   "devDependencies": {
+    "@types/firebase": "3.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

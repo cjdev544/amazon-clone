@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { type Product } from '@/types.d'
 import Image from 'next/image'
 import { StarIcon } from '@heroicons/react/24/solid'
+
+import { ProductButton } from './ProductButton'
+import { type Product } from '@/types.d'
 
 interface Props {
   product: Product
@@ -41,7 +43,7 @@ export function Product({ product }: Props) {
           <p className='text-xs text-gray-500'>envío GRATIS</p>
         </div>
       )}
-      <button className='mt-auto button'>Agregar a la cesta</button>
+      <ProductButton product={product} />
     </div>
   )
 }

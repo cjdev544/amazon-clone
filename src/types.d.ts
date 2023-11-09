@@ -32,3 +32,8 @@ export interface Rating {
   rate: number
   count: number
 }
+
+export interface User {
+  uid: string
+  name: string
+}

@@ -21,3 +21,4 @@ export async function ProductFeed() {
     </div>
   )
 }
+// git remote add origin https://github.com/cjdev544/amazon-clone.git
