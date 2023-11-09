@@ -9,7 +9,7 @@ interface Props {
 
 export default function CheckoutProductButtons({ product }: Props) {
   const { addProductToCart, removeProductFromCart } = useCartStore()
-  console.log(product.checkProductId)
+
   return (
     <div className='flex flex-col space-y-2 my-auto justify-self-end'>
       <button className='button' onClick={() => addProductToCart(product)}>

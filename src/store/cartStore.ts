@@ -4,6 +4,7 @@ import { devtools, persist } from 'zustand/middleware'
 
 interface State {
   productsInCart: CheckoutProduct[]
+  totalProducts: () => number
   addProductToCart: (product: Product) => void
   removeProductFromCart: (checkProductId: string) => void
 }
@@ -13,6 +14,14 @@ export const useCartStore = create<State>()(
     persist(
       (set, get) => ({
         productsInCart: [],
+
+        totalProducts: () => {
+          let total = 0
+          get().productsInCart.forEach((product) => {
+            total += product.price
+          })
+          return total
+        },
 
         addProductToCart: (product: Product) => {
           const checkProductId = crypto.randomUUID()

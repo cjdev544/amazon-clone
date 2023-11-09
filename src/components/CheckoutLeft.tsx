@@ -5,7 +5,7 @@ export function CheckoutLeft() {
   return (
     <div className='flex-grow m-5 shadow-sm'>
       <Image
-        src='/checkout-banner.jpeg'
+        src='/cart-banner.jpg'
         alt='banner de la pagina del carrito de compras'
         width={1020}
         height={250}
