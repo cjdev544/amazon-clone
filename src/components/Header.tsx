@@ -35,8 +35,10 @@ export function Header() {
         <div className='text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap'>
           <AuthButton />
           <div className='link'>
-            <p>devoluciones</p>
-            <p className='font-extrabold md:text-sm'>y Pedidos</p>
+            <Link href='/orders'>
+              <p>devoluciones</p>
+              <p className='font-extrabold md:text-sm'>y Pedidos</p>
+            </Link>
           </div>
           <div className='relative link flex items-end'>
             <IconShoppingCart />

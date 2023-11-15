@@ -6,10 +6,12 @@ export function useProducts() {
   const removeProductFromCart = useCartStore(
     (state) => state.removeProductFromCart
   )
+  const cleanCart = useCartStore((state) => state.cleanCart)
 
   return {
     productsInCart,
     addProductToCart,
     removeProductFromCart,
+    cleanCart,
   }
 }

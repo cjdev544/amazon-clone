@@ -7,6 +7,7 @@ interface State {
   totalProducts: () => number
   addProductToCart: (product: Product) => void
   removeProductFromCart: (checkProductId: string) => void
+  cleanCart: () => void
 }
 
 export const useCartStore = create<State>()(
@@ -40,6 +41,10 @@ export const useCartStore = create<State>()(
             (product) => product.checkProductId !== checkProductId
           )
           set({ productsInCart }, false, 'REMOVE_FROM_CART')
+        },
+
+        cleanCart: () => {
+          set({ productsInCart: [] })
         },
       }),
       { name: 'productsCart' }

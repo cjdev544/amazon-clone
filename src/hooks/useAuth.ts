@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { type User } from '@/types.d'
 
 export function useAuth() {
-  const [user, setUser] = useState<User | undefined | null>(undefined)
+  const [user, setUser] = useState<User | undefined | null>(null)
 
   const { data } = useSession()
 
@@ -12,6 +12,7 @@ export function useAuth() {
       setUser({
         uid: data.user.email,
         name: data.user.name,
+        email: data.user.email,
       })
     }
   }, [data])
